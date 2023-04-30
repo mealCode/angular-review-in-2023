@@ -29,14 +29,17 @@ export class RegisterEffect {
     )
   })
 
-  redirectAfterSubmit$ = createEffect(() => {
-    return this.actions$.pipe(
-      ofType(registerSuccessAction),
-      tap(() => {
-        this.router.navigateByUrl('/')
-      })
-    )
-  })
+  redirectAfterSubmit$ = createEffect(
+    () => {
+      return this.actions$.pipe(
+        ofType(registerSuccessAction),
+        tap(() => {
+          this.router.navigateByUrl('/')
+        })
+      )
+    },
+    { dispatch: false }
+  )
 
   constructor(
     private actions$: Actions,
