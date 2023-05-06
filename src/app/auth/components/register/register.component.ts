@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { select, Store } from '@ngrx/store'
 import { Observable } from 'rxjs'
 import { PersistanceService } from 'src/app/shared/services/persistance.service'
+import { AppStateInterface } from 'src/app/shared/types/app-state.interface'
 import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.interface'
 
 import { registerAction } from '../../store/actions/register.action'
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
   isSubmitting$: Observable<boolean>
   backendErrors$: Observable<BackendErrorsInterface | null>
 
-  constructor(private fb: FormBuilder, private store: Store) {}
+  constructor(private fb: FormBuilder, private store: Store<AppStateInterface>) {}
 
   ngOnInit(): void {
     this.initializeForm()

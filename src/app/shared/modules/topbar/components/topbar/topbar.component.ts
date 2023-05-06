@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { select, Store } from '@ngrx/store'
 import { Observable } from 'rxjs'
 import { currentUserSelector, isAnonymousSelector, isLoggedSelector } from 'src/app/auth/store/selectors'
+import { AppStateInterface } from 'src/app/shared/types/app-state.interface'
 import { CurrentUserInterface } from 'src/app/shared/types/currentUser.interface'
 
 @Component({
@@ -14,7 +15,7 @@ export class TopBarComponent implements OnInit {
   isAnonymous$: Observable<boolean>
   currentUser$: Observable<CurrentUserInterface | null>
 
-  constructor(private store: Store) {}
+  constructor(private store: Store<AppStateInterface>) {}
 
   ngOnInit(): void {
     this.isLoggedIn$ = this.store.pipe(select(isLoggedSelector))
