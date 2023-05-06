@@ -5,6 +5,7 @@ import { EffectsModule } from '@ngrx/effects'
 import { StoreModule } from '@ngrx/store'
 import { ErrorMessageModule } from '../error-message/error-message.module'
 import { LoadingModule } from '../loading/loading.module'
+import { PaginationModule } from '../pagination/pagination.module'
 
 import { FeedComponent } from './components/feed/feed.component'
 import { FeedService } from './services/feed.service'
@@ -17,6 +18,7 @@ import { reducer } from './store/reducers'
     RouterModule,
     ErrorMessageModule,
     LoadingModule,
+    PaginationModule,
     StoreModule.forFeature('feed', reducer),
     EffectsModule.forFeature([GetFeedEffect]),
   ],
