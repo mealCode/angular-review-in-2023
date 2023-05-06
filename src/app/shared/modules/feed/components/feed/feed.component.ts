@@ -3,6 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router'
 import { select, Store } from '@ngrx/store'
 import queryString from 'query-string'
 import { Observable, Subscription } from 'rxjs'
+import { AppStateInterface } from 'src/app/shared/types/app-state.interface'
 import { environment } from 'src/environments/environment'
 
 import { getFeedAction } from '../../store/actions/getFeed.action'
@@ -25,7 +26,7 @@ export class FeedComponent implements OnInit, OnDestroy {
   queryParamsSubscription: Subscription
   currentPage: number
 
-  constructor(private store: Store, private router: Router, private route: ActivatedRoute) {}
+  constructor(private store: Store<AppStateInterface>, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.initializeValues()
