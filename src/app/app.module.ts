@@ -9,6 +9,8 @@ import { environment } from 'src/environments/environment'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { AuthModule } from './auth/auth.module'
+import { GlobalFeedModule } from './global-feed/global-feed.module'
+import { BannerModule } from './shared/modules/banner/banner.module'
 import { TopBarModule } from './shared/modules/topbar/topbar.module'
 import { AuthInterceptor } from './shared/services/authInterceptor.service'
 import { PersistanceService } from './shared/services/persistance.service'
@@ -21,6 +23,7 @@ import { PersistanceService } from './shared/services/persistance.service'
     AppRoutingModule,
     AuthModule,
     TopBarModule,
+    GlobalFeedModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
