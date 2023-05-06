@@ -5,6 +5,7 @@ import { Route, RouterModule } from '@angular/router'
 import { BannerModule } from '../shared/modules/banner/banner.module'
 import { ErrorMessageModule } from '../shared/modules/error-message/error-message.module'
 import { FeedModule } from '../shared/modules/feed/feed.module'
+import { PopularTagsModule } from '../shared/modules/popular-tags/popular-tags.module'
 
 import { GlobalFeedComponent } from './components/global-feed/global-feed.component'
 
@@ -16,7 +17,14 @@ const routes: Route[] = [
 ]
 
 @NgModule({
-  imports: [CommonModule, FeedModule, BannerModule, ErrorMessageModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    FeedModule,
+    BannerModule,
+    ErrorMessageModule,
+    PopularTagsModule,
+    RouterModule.forChild(routes),
+  ],
   declarations: [GlobalFeedComponent],
 })
 export class GlobalFeedModule {}
