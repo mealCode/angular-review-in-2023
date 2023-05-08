@@ -15,6 +15,8 @@ import { BannerModule } from './shared/modules/banner/banner.module'
 import { TopBarModule } from './shared/modules/topbar/topbar.module'
 import { AuthInterceptor } from './shared/services/authInterceptor.service'
 import { PersistanceService } from './shared/services/persistance.service'
+import { TagFeedModule } from './tag-feed/tag-feed.module'
+import { YourFeedModule } from './your-feed/your-feed.module'
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +27,8 @@ import { PersistanceService } from './shared/services/persistance.service'
     AuthModule,
     TopBarModule,
     GlobalFeedModule,
+    YourFeedModule,
+    TagFeedModule,
     StoreModule.forRoot({ router: routerReducer }),
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot({}),
